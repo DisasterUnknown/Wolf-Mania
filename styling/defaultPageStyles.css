@@ -68,50 +68,6 @@
     }
 }
 
-
-/* Manga Pages Styles */
-/* Manga grid styles */
-.mangaListMangaPage {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(2, auto);
-
-    a {
-        display: grid;
-        margin: 4px;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 5px;
-        border: 1px solid white;
-        padding: 2px;
-        /* background-color: green; */
-
-        img {
-            width: auto;
-            height: 9em;
-            margin: 2px;
-            border-radius: 8px;
-            margin-bottom: 0 !important;
-        }
-
-        p {
-            width: 95%;
-            margin: 2.5%;
-            text-align: left;
-            font-size: 12px;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 2px;
-        }
-
-        #chapterNo {
-            height: auto;
-            font-weight: none;
-            color: gray;
-        }
-    }
-}
-
 footer {
     margin-top: 25px;
 }
