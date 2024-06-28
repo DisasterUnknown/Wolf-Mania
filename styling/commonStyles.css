@@ -168,8 +168,21 @@ footer {
 
         p {
             margin: 0;
-            margin-top: 10px !important;
-            padding-bottom: 5px !important;
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
         }
+    }
+}
+
+/* PC View */
+@media screen and (min-width: 600px) {
+    .navigationBar {
+        grid-template-columns: 50px 1fr 1fr;
+    }
+
+    .pcMainBody {
+        width: 80%;
+        margin: 0 auto;
+        /* background-color: red; */
     }
 }

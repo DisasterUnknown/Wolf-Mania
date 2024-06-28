@@ -1,7 +1,17 @@
+:root {
+    --DarkOrange: rgba(241, 145, 0, 0.922);
+}
+
 /* Home Page  */
 #mainBanner {
     width: 100%;
 }
+
+/* Page main Banner */
+#pcMainBanner {
+    display: none;
+}
+
 
 /* Page manga arange area */
 .mangaListArange {
@@ -64,10 +74,121 @@
         border: none;
         border-radius: 5px;
         padding: 3px 6px;
-        background-color: rgba(241, 145, 0, 0.922);
+        background-color: var(--DarkOrange);
     }
 }
 
 footer {
     margin-top: 25px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* Pc View Styles */
+
+/* Home Page */
+@media screen and (min-width: 600px) {
+    #pcMainBanner {
+        display: block;
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    #mainBanner {
+        display: none;
+    }
+
+    .mangaUpdateList {
+        width: 100%;
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-bottom: 1px;
+        background-color: rgba(36, 36, 36, 0.385);
+
+        .mangaListArange img {
+            height: 400px;
+        }
+    }
+
+    .mangaPopularList {
+        margin-left: 10px;
+        background-color: rgba(36, 36, 36, 0.385);
+    }
+}
+
+/* Pc view 1 */
+@media screen and (min-width: 1300px) {
+    .mangaMainBodyPcView {
+        display: grid;
+        grid-template-columns: 750px auto;
+    }
+
+    .mangaPopularList {
+        #topic {
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        #duration {
+            text-align: center;
+            padding: 3px;
+            margin: 0 15px;
+            margin-bottom: 15px !important;
+            border-radius: 5px;
+            background-color: var(--DarkOrange);
+        }
+
+        .mangaPopularListGrid {
+            display: grid;
+            grid-template-columns: repeat(1, auto);
+            grid-template-rows: repeat(5, auto);
+
+            section {
+                a {
+                    text-decoration: none;
+                }
+
+                img {
+                    width: 90px;
+                    height: 135px;
+                    margin: 10px 0;
+                    margin-left: 5px !important;
+                    border-radius: 10px;
+                }
+
+                td {
+                    vertical-align: top;
+
+                    h3 {
+                        color: white;
+                        margin: 5px;
+                    }
+
+                    p {
+                        color: gray;
+                        margin: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Pc View 2 */
+@media screen and (max-width: 1300px) {
+    .mangaPopularList {
+        display: none;
+    }
+}
+
+/* Pc View 3 */
+@media (max-width: 2000px) and (min-width: 600px) {
+    .mangaUpdateList {
+        width: 100%;
+    }
+
+    .mangaListArange img {
+        height: 250px !important;
+    }
 }
