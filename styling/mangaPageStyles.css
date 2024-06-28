@@ -1,0 +1,139 @@
+/* Chapter content area */
+.chapterContent {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    /* background-color: red; */
+
+    #chapterName {
+        font-size: 25px;
+        font-weight: bold;
+    }
+}
+
+/* Top navigation area */
+.topSelectionArea {
+    /* background-color: red; */
+    width: 90%;
+    margin: 0 auto;
+
+    .chapters {
+        width: 100%;
+        height: 25px;
+        border: none;
+        font-weight: bold;
+        border-radius: 15px;
+        padding: 0 5px;
+        margin: 5px auto;
+        color: rgb(163, 163, 163);
+        background-color: rgb(41, 41, 41);
+    }
+
+    .navigationBtns {
+        float: right;
+        border: none;
+        border-radius: 10px;
+        font-size: 12px;
+        padding-top: 4.5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: bold;
+        margin: 6px 3px;
+        color: black;
+        background-color: orange;
+    }
+}
+
+/* Manga section styles */
+.manga {
+    /* background-color: red; */
+    /* width: 100%; */
+
+    img {
+        width: 100%;
+    }
+
+    #begin {
+        margin-bottom: -23px;
+    }
+
+    div img {
+        margin-bottom: -23px;
+    }
+
+}
+
+/* Bottom navigation area */
+.BottonSelectionArea {
+    /* background-color: red; */
+    width: 90%;
+    margin: 0 auto;
+
+    .chapters {
+        width: 40%;
+        height: 25px;
+        border: none;
+        font-weight: bold;
+        border-radius: 15px;
+        padding: 0 5px;
+        margin: 5px auto;
+        color: rgb(163, 163, 163);
+        background-color: rgb(41, 41, 41);
+    }
+
+    .navigationBtns {
+        float: right;
+        border: none;
+        border-radius: 10px;
+        font-size: 12px;
+        padding-top: 4.5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: bold;
+        margin: 6px 3px;
+        color: black;
+        background-color: orange;
+    }
+}
+
+/* Summery section */
+.Summery {
+    width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+    /* background-color: red; */
+
+    p {
+        font-size: 1em;
+    }
+}
+
+/* Go to top button */
+.topBtn {
+    position: absolute;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    div {
+        width: 30px;
+        height: 30px;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        margin-bottom: 32px;
+        margin-right: 25px;
+        border-radius: 100px;
+        background-color: orange;
+
+        h2 {
+            margin: 0;
+            padding: 5px;
+        }
+    }
+}

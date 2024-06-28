@@ -1,0 +1,113 @@
+/* Home Page  */
+#mainBanner {
+    width: 100%;
+}
+
+/* Page manga arange area */
+.mangaListArange {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+
+    a {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(2, auto);
+        width: calc((100%/2)-40px);
+        margin: 10px;
+        text-align: center;
+        text-decoration: none;
+        /* background-color: red; */
+
+        section {
+            img {
+                width: auto;
+                height: 11em;
+                margin: 10px;
+                border-radius: 8px;
+                margin-bottom: 0 !important;
+            }
+
+            p {
+                margin: 1px;
+                color: white;
+                margin-bottom: 10px;
+            }
+        }
+
+        #chapterGrid {
+            display: grid;
+            border-radius: 3px;
+            margin-top: auto;
+            margin-bottom: 1px !important;
+            grid-template-columns: repeat(2, auto);
+            background-color: rgb(37, 37, 37);
+
+            p {
+                height: auto;
+                margin: 2px 0;
+                color: rgb(176, 176, 176);
+            }
+        }
+    }
+}
+
+/* View All button */
+.viewBtn {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 45px;
+
+    button {
+        width: 90%;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 3px 6px;
+        background-color: rgba(241, 145, 0, 0.922);
+    }
+}
+
+
+/* Manga Pages Styles */
+/* Manga grid styles */
+.mangaListMangaPage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+
+    a {
+        margin: 5px;
+        text-align: center;
+        text-decoration: none;
+        /* background-color: red; */
+
+        img {
+            width: auto;
+            height: 9em;
+            margin: 2.5%;
+            border-radius: 8px;
+            margin-bottom: 0 !important;
+        }
+
+        p {
+            width: 95%;
+            margin: 2.5%;
+            text-align: left;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 2px;
+        }
+
+        #chapterNo {
+            height: auto;
+            font-weight: none;
+            color: gray;
+        }
+    }
+}
+
+footer {
+    margin-top: 25px;
+}
