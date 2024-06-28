@@ -119,6 +119,8 @@ body {
 
 /* footer styles */
 footer {
+    margin-top: 70px !important;
+
     .disclaimer {
         width: 90%;
         margin: 0 auto;
