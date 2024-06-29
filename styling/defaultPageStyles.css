@@ -82,23 +82,113 @@ footer {
     margin-top: 25px;
 }
 
+/* mangaPages Page */
+/* Page manga arange area */
+.mangaListArangeMamgaPages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+
+    a {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(2, auto);
+        width: calc((100%/2)-40px);
+        margin: 10px;
+        text-align: center;
+        text-decoration: none;
+        /* background-color: red; */
+
+        section {
+            img {
+                width: auto;
+                height: 14em;
+                margin: 8px;
+                border-radius: 8px;
+                margin-bottom: 0 !important;
+            }
+
+            p {
+                margin: 1px;
+                color: white;
+                margin-bottom: 10px;
+            }
+        }
+
+        #chapterGrid {
+            display: grid;
+            border-radius: 3px;
+            margin-top: auto;
+            margin-bottom: 1px !important;
+            grid-template-columns: repeat(2, auto);
+            background-color: rgb(37, 37, 37);
+
+            p {
+                height: auto;
+                margin: 2px 0;
+                color: rgb(176, 176, 176);
+            }
+        }
+    }
+}
+
 /* ----------------------------------------------------------------------------------------------------------------------------- */
 /* Pc View Styles */
 
 /* Home Page */
 @media screen and (min-width: 600px) {
-    #pcMainBanner {
-        display: block;
+    /* Main banner slid show */
+    .bannerSlidShow {
         width: 100%;
         margin-top: 40px;
         margin-bottom: 20px;
-        border-radius: 10px;
+        overflow: hidden;
+        transform: translate(0, 0);
+        /* background-color: red; */
+
+        section {
+            display: flex;
+            flex-wrap: nowrap;
+            animation: slide 10s infinite;
+
+            a {
+                flex: 1 0 100%;
+                display: flex;
+            }
+
+            #pcMainBanner {
+                width: 100%;
+                display: block;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    @keyframes slide{
+        0%{
+            transform: translate(0);
+        }
+        35%{
+            transform: translate(0);
+        }
+        45%{
+            transform: translate(-100%);
+        }
+        80%{
+            transform: translate(-100%);
+        }
     }
 
     #mainBanner {
         display: none;
     }
 
+    .mangaTopic div button {
+        padding: 3px;
+        padding-top: 4px !important;
+    }
+
+    /* Manga List */
     .mangaUpdateList {
         width: 100%;
         border-radius: 10px;
@@ -190,5 +280,40 @@ footer {
 
     .mangaListArange img {
         height: 250px !important;
+    }
+}
+
+/* ----------------------------------------------------------------------------------------- */
+/* Manga Pages Pc view styles */
+
+/* Pc view 1 */
+@media screen and (min-width: 600px) {
+    .bannerSlidShow {
+        display: block;
+    }
+
+    .allMangaList {
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgba(36, 36, 36, 0.385);
+    }
+
+    .mangaListArangeMamgaPages {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Pc view 2 */
+@media (max-width: 1050px) and (min-width: 600px) {
+    .mangaListArangeMamgaPages {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Pc view 3 */
+@media (max-width: 800px) and (min-width: 600px) {
+    .mangaListArangeMamgaPages {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

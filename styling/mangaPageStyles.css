@@ -137,3 +137,14 @@
         }
     }
 }
+
+@media screen and (min-width: 600px) {
+    .manga {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .Summery {
+        display: none;
+    }
+}

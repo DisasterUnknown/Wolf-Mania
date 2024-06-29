@@ -176,6 +176,11 @@ footer {
 
 /* PC View */
 @media screen and (min-width: 600px) {
+    #bergerNavigation div div {
+        margin-top: 17% !important;
+        /* background-color: red; */
+    }
+
     .navigationBar {
         grid-template-columns: 50px 1fr 1fr;
     }
