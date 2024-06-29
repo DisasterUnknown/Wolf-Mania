@@ -139,9 +139,13 @@
 }
 
 @media screen and (min-width: 600px) {
-    .manga {
+    .chapterMainContent {
         width: 50%;
         margin: 0 auto;
+
+        #prevBtn1 {
+            float: left;
+        }
     }
 
     .Summery {
