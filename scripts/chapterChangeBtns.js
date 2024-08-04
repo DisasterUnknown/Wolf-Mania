@@ -14,47 +14,65 @@ const prevPageBtn1 = document.getElementById("prevBtn1");
 const prevPageBtn2 = document.getElementById("prevBtn2");
 
 
+// Loading the page from the last red chapter 
+function chapterOnLoad() {
+    const mangaTopic = document.getElementById("chapterName");
+    let mangaName = (mangaTopic.innerHTML).replace(` Chapter 1`, '');
+
+
+    // Checking if there is local storage revelent to this mangaName
+    try {
+        let localData = localStorage.getItem(mangaName);
+        localData = JSON.parse(localData);
+
+        let newChapter = localData[0].newChapter;
+        let oldChapter = 1;
+
+        pageNavigation(newChapter, oldChapter, mangaTopic);
+        updateChapter(newChapter);
+
+    } catch {   // else
+        console.log("No Local data Yet!!");
+    }
+}
+
+window.onload = chapterOnLoad;
+
+
 // Function to the next page
 function pageNavigation(newChapter, oldChapter, mangaTopic) {
     const totalChapters = (document.getElementById("totalChapters")).innerHTML;
 
     if (newChapter > 0) {
         if (newChapter <= totalChapters) {
-            // Getting the manga name
             let mangaName = (mangaTopic.innerHTML).replace(` Chapter ${oldChapter}`, '');
-            // console.log(chapter);
-            // console.log(mangaName);
             mangaTopic.innerText = `${mangaName} Chapter ${newChapter}`;
 
-            // Going to the file and reading the content in noChapter.txt notepad
-            fetch(`../../Resources/manga/${mangaName}/Chapter ${newChapter}/noChapter.txt`)
-                .then(response => {
-                    return response.text();
-                })
+            // Making the img section empty
+            const images = document.getElementById("mangaImages");
+            images.innerHTML = "";
 
-                .then(text => {
-                    text = parseInt(text);
+            // Adding the imgs src's to the html img tages
+            function imageAdder(data) {
+                let htmlTag = '';
 
-                    const images = document.getElementById("mangaImages");
+                data.forEach(link => {
+                    htmlTag += `<img src="${link}" alt="img1">`
+                });
 
-                    // Getting the img link list from the files 
-                    fetch(`../../Resources/manga/${mangaName}/Chapter ${newChapter}/linkList.txt`)
-                        .then(respose => {
-                            return respose.text();
-                        })
+                images.innerHTML = htmlTag;
+            }
 
-                        .then(text => {
-                            let lines = text.split('\n');
-                            let htmlTag = `<img src="${lines[0]}" alt="img1"></img>`
-                            // console.log(htmlTag);
+            // Getting the imgs from the JSON files 
+            fetch(`../../Json/${mangaName}/Chapter ${newChapter}.json`)
+                .then(res => res.json())
+                .then(data => imageAdder(data))
 
-                            for (let i = 1; i <= ((lines.length)-1); i++) {
-                                htmlTag = `${htmlTag}\n<img src="${lines[i]}" alt="img${i}">`
-                            }
-
-                            images.innerHTML = htmlTag;
-                        })
-                })
+            // Pushing to local storage 
+            pageData = []
+            pageData.push({ mangaName, newChapter })
+            pageData = JSON.stringify(pageData);
+            localStorage.setItem(mangaName, pageData);
         }
     }
 }
@@ -68,8 +86,6 @@ function nextPage() {
     let newChapter = chapter + 1;
     let oldChapter = chapter;
 
-    console.log(newChapter);
-    console.log(oldChapter);
     pageNavigation(newChapter, oldChapter, mangaTopic);
     updateChapter(newChapter);
 }
@@ -83,8 +99,6 @@ function prevPage() {
     let newChapter = chapter - 1;
     let oldChapter = chapter;
 
-    console.log(newChapter);
-    console.log(oldChapter);
     pageNavigation(newChapter, oldChapter, mangaTopic);
     updateChapter(newChapter);
 }
@@ -105,8 +119,6 @@ function mangaSelect() {
         behavior: 'smooth'
     });
 
-    console.log(chapter);
-    console.log(oldChapter);
 
     // Calling for chapter update and page update funtions
     pageNavigation(chapter, oldChapter, mangaTopic);
@@ -127,10 +139,7 @@ function updateChapter(newChapter) {
                 chapter.selected = false;
             })
 
-            console.log(`Test: ${newChapter}`);
-
             chapters[newChapter - 1].selected = true;
-            console.log(chapters[newChapter]);
         }
     }
 
