@@ -64,7 +64,7 @@ function pageNavigation(newChapter, oldChapter, mangaTopic) {
             }
 
             // Getting the imgs from the JSON files 
-            fetch(`../../Json/${mangaName}/Chapter ${newChapter}.json`)
+            fetch(`../../JSON/${mangaName}/Chapter ${newChapter}.json`)
                 .then(res => res.json())
                 .then(data => imageAdder(data))
 
