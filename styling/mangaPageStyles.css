@@ -98,18 +98,6 @@
     }
 }
 
-/* Summery section */
-.Summery {
-    width: 80%;
-    margin: 0 auto;
-    text-align: justify;
-    /* background-color: red; */
-
-    p {
-        font-size: 1em;
-    }
-}
-
 /* Go to top button */
 .topBtn {
     position: absolute;
@@ -146,9 +134,5 @@
         #prevBtn1 {
             float: left;
         }
-    }
-
-    .Summery {
-        display: none;
     }
 }
